@@ -14,9 +14,8 @@ Laravel Auth app contains:
 
 - 1-  you should create databse named abudiyab-task;
 
-- 2-  write 
+- 2-  write to create vendor folder.
 > composer update;
-to create vendor folder.
 
 - 3- to get database tables write 
 > php artisan migrate;

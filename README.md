@@ -25,3 +25,11 @@ Laravel Auth app contains:
 
 - 5- to create admin user have all premissions 
 > php artisan db:seed --class=CreateAdminUserSeeder
+
+- 5- run the project
+> php artisan serve
+
+you can login with admin user
+
+>admin@gmail.com	
+>123456

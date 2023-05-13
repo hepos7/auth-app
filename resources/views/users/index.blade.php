@@ -36,12 +36,17 @@
                                 <span class="badge bg-primary">{{ $role->name }}</span>
                             @endforeach
                         </td>
-                        <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-info btn-sm">Edit</a></td>
-                        <td>
-                            {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
-                            {!! Form::close() !!}
-                        </td>
+                        @can('users.edit')
+                            <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-info btn-sm">Edit</a></td>
+                        @endcan
+                        @can('users.destroy')
+                            <td>
+                                {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::close() !!}
+                            </td>
+                        @endcan
+                        
                     </tr>
                 @endforeach
             </tbody>
